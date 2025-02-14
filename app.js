@@ -4,7 +4,7 @@ class FormSubmit {
         this.form = document.querySelector(configuracoes.form);
         this.formButton = document.querySelector(configuracoes.button);
         if (this.form) {
-            this.url = this.form.getAtributte("action");
+            this.url = this.form.getAttribute("action"); // Corrigido de getAtributte para getAttribute
         }
         this.sendForm = this.sendForm.bind(this);
     }
@@ -21,14 +21,14 @@ class FormSubmit {
         const formObject = {};
         const fields = this.form.querySelectorAll("[name]");
         fields.forEach((field) => {
-            formObject[field.getAtributte("name")] = field.value; 
+            formObject[field.getAttribute("name")] = field.value; // Corrigido de getAtributte para getAttribute
         });
         return formObject;
     }
 
     onSubmission(event) {
         event.preventDefault();
-        event.target.disable = true;
+        event.target.disabled = true; // Corrigido de disable para disabled
         event.target.innerText = "Enviando...";
     }
 
@@ -56,11 +56,11 @@ class FormSubmit {
     }
 }
 
-const FormSubmit = new FormSubmit({
+const formSubmit = new FormSubmit({
     form: "[data-form]",
     button: "[data-button]",
     success: "<h1 class='success'>Mensagem enviada!</h1>",
     error: "<h1 class='error'>Não foi possível enviar sua mensagem.</h1>",
 });
 
-FormSubmit.init();
+formSubmit.init();
