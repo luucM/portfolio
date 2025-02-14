@@ -60,7 +60,7 @@ body {
 .minha-imagem img {
     max-width: 100%; /* Garante que a imagem não ultrapasse o container */
     height: auto; /* Mantém a proporção */
-    max-height: 300px; /* Limita a altura para telas grandes */
+    max-height: 400px; /* Limita a altura para telas grandes */
     border-radius: 50%; /* Mantém o estilo arredondado */
     object-fit: cover;
 }
