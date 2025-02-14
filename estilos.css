@@ -58,14 +58,19 @@ body {
 }
 
 .minha-imagem img {
-    max-width: 100%; /* Garante que a imagem não ultrapasse o container */
     height: auto; /* Mantém a proporção */
-    max-height: 400px; /* Limita a altura para telas grandes */
     border-radius: 50%; /* Mantém o estilo arredondado */
     object-fit: cover;
 }
 
 /* Responsividade */
+@media (max-width: 986px) {
+    .minha-imagem {
+        margin-top: 65px !important;
+    }
+
+}
+
 @media (max-width: 768px) {
     .menu {
         justify-content: center; /* Centraliza o menu em telas médias */
@@ -77,9 +82,10 @@ body {
         font-size: 16px;
     }
 
-    .minha-imagem img {
-        max-height: 250px; /* Ajuste da imagem para telas médias */
+    .minha-imagem {
+        margin-top: 65px !important;
     }
+
 }
 
 @media (max-width: 480px) {
@@ -94,17 +100,20 @@ body {
         padding: 12px 0;
     }
 
-    .minha-imagem img {
-        max-height: 200px; /* Ajuste da imagem para telas pequenas */
-        margin-top: 10px; /* Evita que encoste em outros elementos */
+    .minha-imagem {
+        margin-top: 65px !important;
     }
+
 }
+
 /*Toda a parte sobre mim da página HOME*/
 .conteudo {
     margin-top: 25px;
-    margin-left: 200px;
     font-size: 30px;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .conteudo h3 {
@@ -170,7 +179,7 @@ body {
         width: 0;
     }
     to {
-        width: 17%;
+        width: 50%;
     }
 }
 
@@ -186,13 +195,11 @@ body {
     justify-content: center;
     align-items: flex-end;
     left: 200px;
+    margin-top: 5px;
 }
 
 .conteudo .minha-imagem img{
-    position: fixed;
-    margin-right: -1700px;
-    top: 265px;
-    width: 45vh; /*Largura da imagem*/
+    width: 400px;
     height: 400px;
     border-radius: 50%;
     border: 3px solid #5850EC; /* Cor base da borda */
@@ -201,6 +208,10 @@ body {
         0 0 20px #5850EC, 
         0 0 40px #5850EC, 
         0 0 50px #5850EC; /* Efeito neon */
+}
+
+.conteudo .left-conteudo {
+    margin-top: 50px;
 }
 
 
@@ -259,6 +270,7 @@ body {
 
 .sobreblock {
     display: flex;
+    flex-wrap: wrap;
     padding: 10px;
     margin-top: 80px;
     justify-content: space-evenly;
@@ -267,6 +279,7 @@ body {
 
 .cert-container {
     display: flex;
+    height: 500px;
     justify-content: center;
     align-items: center;
     gap: 100px 50px;
@@ -356,22 +369,26 @@ body {
 /*Aqui começa a página de experiencias*/
 
 .experi-container {
+    height: 500px;
     display: flex;
-    justify-content: center;
+    justify-content: inherit;
     align-items: center;
     gap: 10px 80px;
+    flex-wrap: wrap;
 }
 
 .titulo-experi {
-    position: absolute;
-    top: 200px;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+
 }
 
 .titulo-experi h1 {
     background: linear-gradient(to right, #3f35ff, #665ff7); /* Cores do degradê */
     -webkit-background-clip: text; /* Aplica o degradê ao texto */
     -webkit-text-fill-color: transparent; /* Torna o preenchimento do texto transparente */
-    width: 100%;    /* Garante que o contêiner ocupe toda a largura */
 }
 
 .bloco-experi {
