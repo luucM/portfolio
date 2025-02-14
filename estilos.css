@@ -1,4 +1,4 @@
-/* Reset básico para manter a consistência */
+/* Reset básico */
 * {
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
@@ -10,7 +10,7 @@
 /* Estilos do corpo */
 body {
     display: flex;
-    flex-direction: column; /* Organiza os elementos verticalmente */
+    flex-direction: column;
     background: #121720;
     background-size: cover;
     height: 100vh;
@@ -19,77 +19,21 @@ body {
 
 /* Menu navegacional fixo e responsivo */
 .menu {
-    position: fixed; /* Mantém o menu sempre visível no topo */
+    position: fixed; /* Mantém fixo no topo */
     top: 0;
     right: 0;
-    width: 100%; /* Ocupa toda a largura da tela */
+    width: 100%;
     display: flex;
     justify-content: flex-end; /* Alinha os botões à direita */
     align-items: center;
     gap: 10px;
-    padding: 15px 20px; /* Espaçamento interno */
-    background-color: #121720;
-    z-index: 1000; /* Garante que fique acima dos outros elementos */
-    flex-wrap: wrap; /* Permite que os botões quebrem linha se necessário */
+    padding: 15px 20px;
+    background-color: #121720; /* Mantém a cor original */
+    z-index: 1000;
+    flex-wrap: wrap;
 }
 
 /* Botões do menu */
-.botao {
-    display: inline-block;
-    padding: 10px 15px; /* Reduz o padding para telas menores */
-    color: #ffffff;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 18px;
-    white-space: nowrap; /* Impede que os botões quebrem linha */
-}
-.botao:hover {
-    transition: .4s;
-    transform: scale(1.05);
-    color: #5850EC;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .menu {
-        justify-content: center; /* Centraliza o menu em telas menores */
-        padding: 10px; /* Reduz o espaçamento */
-    }
-
-    .botao {
-        padding: 8px 12px; /* Ajusta o tamanho dos botões */
-        font-size: 16px; /* Reduz a fonte */
-    }
-}
-
-@media (max-width: 480px) {
-    .menu {
-        flex-direction: column; /* Empilha os botões verticalmente em telas muito pequenas */
-        align-items: center;
-    }
-
-    .botao {
-        width: 100%; /* Faz os botões ocuparem toda a largura */
-        text-align: center;
-        padding: 12px 0;
-    }
-}
-
-/* Botões do menu navegacional */
-.menu {
-    position: fixed; /* Fixa no topo da tela */
-    top: 0; /* Alinha ao topo */
-    right: 0; /* Alinha à direita */
-    width: 100%; /* Ocupa toda a largura da tela */
-    display: flex;
-    justify-content: flex-end; /* Mantém os botões no canto direito */
-    align-items: center; /* Centraliza verticalmente */
-    gap: 10px; /* Espaçamento entre os botões */
-    padding: 15px 20px; /* Espaçamento interno */
-    background-color: #121720; /* Mantém o fundo */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
-}
-
 .botao {
     display: inline-block;
     padding: 10px 20px;
@@ -97,11 +41,63 @@ body {
     cursor: pointer;
     text-decoration: none;
     font-size: 18px;
+    white-space: nowrap;
 }
 .botao:hover {
     transition: .4s;
     transform: scale(1.05);
-    color: #5850EC;
+    color: #5850EC; /* Mantive a cor original do hover */
+}
+
+/* Ajuste da imagem */
+.minha-imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.minha-imagem img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o container */
+    height: auto; /* Mantém a proporção */
+    max-height: 300px; /* Limita a altura para telas grandes */
+    border-radius: 50%; /* Mantém o estilo arredondado */
+    object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu {
+        justify-content: center; /* Centraliza o menu em telas médias */
+        padding: 10px;
+    }
+
+    .botao {
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+    .minha-imagem img {
+        max-height: 250px; /* Ajuste da imagem para telas médias */
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        flex-direction: column; /* Empilha os botões verticalmente em telas pequenas */
+        align-items: center;
+    }
+
+    .botao {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+    }
+
+    .minha-imagem img {
+        max-height: 200px; /* Ajuste da imagem para telas pequenas */
+        margin-top: 10px; /* Evita que encoste em outros elementos */
+    }
 }
 /*Toda a parte sobre mim da página HOME*/
 .conteudo {
